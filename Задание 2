@@ -1,0 +1,37 @@
+#include <iostream>
+using namespace std;
+class employee
+{
+	int var;
+	float salary;
+public: 
+	void set() {
+		cout << "Введите номер сотрудника:  " ;
+		cin >> var;
+		cout << "Введите оклад сотрудника:  ";
+		cin >> salary;
+
+}
+	void show()
+	{
+		cout << endl;
+		cout << "Введите номер сотрудника:  " << var <<  endl;
+		cout << "Введите оклад сотрудника:  " <<  salary << endl << endl;
+		cout << endl;
+	}
+
+};
+
+int main()
+{
+	setlocale(LC_ALL, "Russian");
+	employee emp[3];
+	for (int i = 0; i < 3; i++)
+	{
+		emp[i].set();
+	}
+	for (int i = 0; i < 3; i++)
+	{
+		emp[i].show();
+	}
+}
