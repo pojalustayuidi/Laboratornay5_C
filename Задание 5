@@ -1,0 +1,88 @@
+#include <iostream>
+using namespace std;
+class date {
+	int month, day, year;
+public:
+	void getdata() {
+		char dummy;
+		cout << "Введите дату найма в формате dd/mm/yy: ";
+		cin >> day >> dummy >> month >> dummy >> year;
+
+	}
+	void showdate()
+	{
+		cout << endl;
+		cout << "Дата найма:   " << endl << day << '/' << month << '/' << year;
+	}
+
+};
+enum type
+{
+	laborer,secretary, manager
+};
+
+
+class employee
+{
+	int var;
+	float salary;
+	date heredate;
+		type empState;
+public:
+	void getEmploy() {
+		char answer;
+		cout << "Введите номер сотрудника:  ";
+		cin >> var;
+		cout << "Введите оклад сотрудника:  ";
+		cin >> salary;
+		heredate.getdata();
+		cout << "Введите первую букву должности сотрудника (l,s,m): ";
+		cin >> answer;
+		switch (answer)
+		{
+		case 'l': empState = laborer;
+			break;
+		case 's': empState = secretary;
+			break;
+		case 'm': empState = manager;
+			break;
+		}
+	}
+	void putEmploy()
+	{
+		cout << "Сотрудник #" << var << ":" << endl;
+		cout << "tОклад сотрудника: " << salary << endl << 't';
+		heredate.showdate();
+		cout << "tСтатус сотрудника: ";
+		switch (empState)
+		{
+		case laborer:
+			cout << "Лаборант" << endl;
+			break;
+		case secretary:
+			cout << "Секретарь" << endl;
+			break;
+		case manager:
+			cout << "Манагер" << endl;
+			break;
+		}
+	}
+
+};
+
+int main()
+{
+	setlocale(LC_ALL, "Russian");
+	employee emp[3];
+	for (int i = 0; i < 3; i++)
+	{
+		emp[i].getEmploy();
+		cout << endl;
+	}
+	cout << endl;
+	for (int i = 0; i < 3; i++)
+	{
+		emp[i].putEmploy();
+		cout << endl;
+	}
+}
