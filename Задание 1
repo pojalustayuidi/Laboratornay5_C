@@ -1,0 +1,34 @@
+#include <iostream>
+using namespace std;
+class Double
+{
+	double value;
+public:
+	void set0() {
+		value = 0;
+}
+	void init()
+	{
+		int a;
+		cout << "Введите целое число:  ";
+		cin >> a;
+		value = a;
+	}
+	void show() {
+		cout << "Введите значение переменной:  " << value;
+	}
+	void func(Double var1, Double var2) {
+		value = var1.value + var2.value;
+	}
+};
+
+int main()
+{
+	setlocale(LC_ALL, "Russian");
+	Double a, b, c;
+	a.init();
+	b.init();
+	c.func(a, b);
+	c.show();
+
+}
