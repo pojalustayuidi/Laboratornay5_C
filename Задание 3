@@ -1,0 +1,27 @@
+#include <iostream>
+using namespace std;
+class date
+{
+	int month, day, year;
+public: 
+	void getdata() {
+		char dummy;
+		cout << "Введите дату в формате dd/mm/yy:   ";
+		cin >> day >> dummy >> month >> dummy >> year;
+
+}
+	void showdate()
+	{
+		cout << endl;
+		cout << "Дата:   " << day << '/' << month << '/' << year;
+	}
+
+};
+
+int main()
+{
+	setlocale(LC_ALL, "Russian");
+	date q;
+	q.getdata();
+	q.showdate();
+}
